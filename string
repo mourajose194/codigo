@@ -1,0 +1,98 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main(){
+	char nome[20], passagem[20];
+	int i=0,j=0,p_espaco=0,u_espaco=0;
+
+	printf("Informe nome completo: ");
+	scanf("%[^\n]s",&nome);
+
+	for(i=0;i<strlen(nome);i++){
+		if(nome[i]==' '){
+			u_espaco = i;
+		}
+	}
+
+	for(i=strlen(nome)-1;i>=0;i--){
+		if(nome[i]==' '){
+			p_espaco = i;
+		}
+	}
+
+	for(i=u_espaco+1;i<strlen(nome);i++,j++){
+		passagem[j]=toupper(nome[i]);
+	}
+
+	passagem[j]='/';
+	j++;
+
+	for(i=0;i<p_espaco;i++){
+		passagem[j] = nome[i];
+		j++;
+	}
+	
+	printf("\n\n\n%s\n\n\n",passagem);
+	
+	return 0;
+}
+
+
+/*
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main(){
+	char nome[20];
+	int i=0, tam_string=0;
+	
+	printf("Informe o nome: ");
+	scanf("%[^\n]s",&nome);
+	
+	tam_string = strlen(nome);
+	
+	for(i=0;i<tam_string;i++){
+		printf("%c",toupper(nome[i]));
+	}
+	
+	return 0;
+}
+*/
+
+
+/*
+
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+	char nome[20];
+	int i=0, tam_string=0;
+	
+	printf("Informe o nome: ");
+	scanf("%[^\n]s",&nome);
+	
+	tam_string = strlen(nome);
+	
+	printf("\n\n\n%s\n\n\n", nome);
+	
+	for(i=0;i<tam_string;i++){
+		printf("%c \n",nome[i]);
+	}
+	
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+*/
